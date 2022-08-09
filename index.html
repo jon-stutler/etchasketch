@@ -15,11 +15,12 @@
     <main>
         <div class="controls">
             <button onclick="changeColor('black')">Black</button>
-            <button onclick="changeColor('white')">Eraser</button>
+            <button onclick="changeColor('red')">Red</button>
             <button onclick="changeColor('random')">Random</button>
+            <button onclick="changeColor('white')">Eraser</button>
             <button onclick="resetBoard()">Clear Sketchpad</button>
             <input type="text" placeholder="Grid Resolution" value="16" onchange="changeSize(this.value)">
-            <button>Reset Grid Resolution</button>
+            <button>Set Sketchpad Resolution</button>
         </div>
         <div class="board"></div>
     </main>

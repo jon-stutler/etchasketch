@@ -1,4 +1,7 @@
 let color = 'black';
+let mouseDown = false;
+document.body.onmousedown = () => (mouseDown = true);
+document.body.onmouseup = () => (mouseDown = false);
 
 function populateBoard(size) {
     let board = document.querySelector('.board');
@@ -10,7 +13,7 @@ function populateBoard(size) {
     let amount = size * size;
     for (let i = 0; i < amount; i++) {
         let square = document.createElement('div');
-        square.addEventListener('mousemove', colorSquare);
+        square.addEventListener('mouseover', colorSquare);
         square.style.backgroundColor = 'white';
         board.insertAdjacentElement('beforeend' , square);
     }
@@ -27,7 +30,8 @@ function changeSize(input) {
     }
 }
 
-function colorSquare() {
+function colorSquare(e) {
+    if (e.type === 'mouseover' && !mouseDown) return;
     if(color == 'random') {
         this.style.backgroundColor = `rgba(${Math.random() * 256}, ${Math.random() * 256}, ${Math.random() * 256}, .5)`;
     } else {
