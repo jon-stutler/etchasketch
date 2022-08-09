@@ -14,9 +14,10 @@
     </header>
     <main>
         <div class="controls">
-            <button>Black</button>
-            <button>Random</button>
-            <button>Reset</button>
+            <button onclick="changeColor('black')">Black</button>
+            <button onclick="changeColor('white')">Eraser</button>
+            <button onclick="changeColor('random')">Random</button>
+            <button onclick="resetBoard()">Clear Sketchpad</button>
             <input type="text" placeholder="Grid Resolution" value="16" onchange="changeSize(this.value)">
             <button>Reset Grid Resolution</button>
         </div>

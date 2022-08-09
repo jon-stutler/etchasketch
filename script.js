@@ -1,3 +1,5 @@
+let color = 'black';
+
 function populateBoard(size) {
     let board = document.querySelector('.board');
     let squares = board.querySelectorAll('div')
@@ -8,9 +10,7 @@ function populateBoard(size) {
     let amount = size * size;
     for (let i = 0; i < amount; i++) {
         let square = document.createElement('div');
-        square.addEventListener('mousemove', () => {
-            square.style.backgroundColor = 'black';
-        });
+        square.addEventListener('mousemove', colorSquare);
         square.style.backgroundColor = 'white';
         board.insertAdjacentElement('beforeend' , square);
     }
@@ -19,10 +19,28 @@ function populateBoard(size) {
 populateBoard(16);
 
 function changeSize(input) {
-    if (input >= 4 && input <= 100){
+    if (input >= 2 && input <= 100){
         populateBoard(input);
     }
     else {
-        alert('Please enter a value from 4 to 100')
+        alert('Please enter a value from 2 to 100');
     }
+}
+
+function colorSquare() {
+    if(color == 'random') {
+        this.style.backgroundColor = `rgba(${Math.random() * 256}, ${Math.random() * 256}, ${Math.random() * 256}, .5)`;
+    } else {
+        this.style.backgroundColor = color;
+    }
+}
+
+function changeColor(choice) {
+    color = choice;
+}
+
+function resetBoard() {
+    let board = document.querySelector('.board');
+    let squares = board.querySelectorAll('div')
+    squares.forEach((div) => div.style.backgroundColor = 'white');
 }
