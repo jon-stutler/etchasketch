@@ -19,10 +19,10 @@ function populateBoard(size) {
 populateBoard(16);
 
 function changeSize(input) {
-    if(input >= 4 || input <= 100){
+    if (input >= 4 && input <= 100){
         populateBoard(input);
     }
     else {
-        console.log('range is 4-100 squares')
+        alert('Please enter a value from 4 to 100')
     }
 }
