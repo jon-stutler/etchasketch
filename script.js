@@ -33,7 +33,7 @@ function changeSize(input) {
 function colorSquare(e) {
     if (e.type === 'mouseover' && !mouseDown) return;
     if(color == 'random') {
-        this.style.backgroundColor = `rgba(${Math.random() * 256}, ${Math.random() * 256}, ${Math.random() * 256}, .5)`;
+        this.style.backgroundColor = `rgba(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, .5)`;
     } else {
         this.style.backgroundColor = color;
     }

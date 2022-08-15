@@ -23,6 +23,16 @@ header {
 .controls {
     background-color: rgb(66, 66, 66);
     color: rgb(231, 231, 231);
+    padding: 16px 50px;
+}
+
+button {
+    margin-top: 15px;
+    padding: 4px 14px;
+}
+
+input {
+    width: 30px;
 }
 
 .board {
@@ -30,5 +40,5 @@ header {
     width: 350px;
     height: 350px;
     display: grid;
-    margin: 10px auto;
+    margin: 30px auto;
 }
